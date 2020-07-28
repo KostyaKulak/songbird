@@ -1,0 +1,22 @@
+{
+  "name": "songbird",
+  "version": "1.0.0",
+  "description": "Songbird - single page quiz app to recognize birds by their voices.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KostyaKulak/songbird.git"
+  },
+  "keywords": [
+    "React",
+    "Javascript"
+  ],
+  "author": "Kanstantsin Kulak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KostyaKulak/songbird/issues"
+  },
+  "homepage": "https://github.com/KostyaKulak/songbird#readme"
+}
