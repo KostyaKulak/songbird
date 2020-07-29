@@ -3,12 +3,13 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function NothingPlugin() {
-  this.apply = function() {};
+  this.apply = function () {};
 }
 
-const config = env => ({
+const config = (env) => ({
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -46,20 +47,21 @@ const config = env => ({
         test: /\.(css|scss|sass)$/,
         exclude: /\.module\.(css|scss|sass)$/,
         use: [
-          'style-loader',
+          env && env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
             },
           },
+          'postcss-loader',
           'sass-loader',
         ],
       },
       {
         test: /\.module\.(css|scss|sass)$/,
         use: [
-          'style-loader',
+          env && env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -67,6 +69,7 @@ const config = env => ({
               modules: true,
             },
           },
+          'postcss-loader',
           'sass-loader',
         ],
       },
@@ -83,7 +86,10 @@ const config = env => ({
       template: 'public/index.html',
     }),
     env && env.analyze ? new BundleAnalyzerPlugin() : new NothingPlugin(),
+    env && env.NODE_ENV === 'production'
+      ? new MiniCssExtractPlugin({ chunkFilename: '[id].css', filename: '[name].css' })
+      : new NothingPlugin(),
   ],
 });
 
-module.exports = env => config(env);
+module.exports = (env) => config(env);
