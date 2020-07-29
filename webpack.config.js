@@ -5,10 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function NothingPlugin() {
-  this.apply = function () {};
+  this.apply = function() {};
 }
 
-const config = (env) => ({
+const config = env => ({
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -42,34 +42,6 @@ const config = (env) => ({
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: 'file-loader',
       },
-      {
-        test: /\.(css|scss|sass)$/,
-        exclude: /\.module\.(css|scss|sass)$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.module\.(css|scss|sass)$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: true,
-            },
-          },
-          'sass-loader',
-        ],
-      },
     ],
   },
   resolve: {
@@ -86,4 +58,4 @@ const config = (env) => ({
   ],
 });
 
-module.exports = (env) => config(env);
+module.exports = env => config(env);
