@@ -7,11 +7,11 @@ import 'regenerator-runtime/runtime';
 
 class App extends React.Component {
     render() {
-        return <div>Hello {this.props.name}</div>
+        return <div>Hello {this.props.name}</div>;
     }
 }
 
 const AppWithHot = hot(module)(App);
 
 var mountNode = document.getElementById('app');
-ReactDOM.render(<AppWithHot name='Jane' />, mountNode)
+ReactDOM.render(<AppWithHot name="Jane" />, mountNode);
