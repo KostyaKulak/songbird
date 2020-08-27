@@ -10,6 +10,7 @@
     ],
     "plugins": ["import", "jsx-a11y", "react", "react-hooks"],
     "rules": {
-      "strict": 0
+      "strict": 0,
+      "quotes": [2, "single", "avoid-escape"]
     }
   }

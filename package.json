@@ -28,6 +28,7 @@
   "homepage": "https://github.com/KostyaKulak/songbird#readme",
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "bootswatch": "^4.5.2",
     "core-js": "^3.6.5",
     "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
