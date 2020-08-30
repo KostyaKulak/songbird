@@ -1,10 +1,17 @@
 import React from 'react';
 import './header.scss';
+import PropTypes from 'prop-types';
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  componentDidUpdate() {
+    const { page } = this.props;
+    const li = document.querySelectorAll('li');
+    li.forEach((el, index) => {
+      el.classList.remove('active');
+      if (index === page) {
+        el.classList.add('active');
+      }
+    });
   }
 
   render() {
@@ -17,13 +24,17 @@ export default class Header extends React.Component {
       'Морские птицы',
     ];
 
+    const { score } = this.props;
+
     return (
       <>
         <div className="header d-flex">
           <div className="top-panel d-flex">
-            <div className="logo" />
+            <div className="logo">
+              <h1>Songbird</h1>
+            </div>
             <h5>
-              Score: <span className="score">0</span>
+              Score: <span className="score">{score}</span>
             </h5>
           </div>
           <ul className="pagination">
@@ -40,3 +51,8 @@ export default class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  page: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+};

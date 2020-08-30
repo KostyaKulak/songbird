@@ -19,18 +19,7 @@
 
 .header ul li a {
   cursor: auto;
-
   border-radius: 0 !important;
-}
-
-.page-item .page-link {
-  background-color: #008966;
-  border-color: #007c5d;
-}
-
-.page-item.active .page-link {
-  background-color: #00bc8c;
-  border-color: #007c5d;
 }
 
 .top-panel {
@@ -40,7 +29,6 @@
 }
 
 .header .logo {
-  background-image: url("../../assets/images/logo.svg");
   width: 200px;
   height: 55px;
   background-size: contain;
