@@ -1,0 +1,44 @@
+.header {
+  margin-top: .5rem;
+  flex-direction: column;
+}
+
+.header ul.pagination {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.header ul li {
+  flex: auto;
+  text-align: center;
+}
+
+.header ul li a {
+  cursor: auto;
+  border-radius: 0 !important;
+}
+
+.top-panel {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 200px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.score {
+  line-height: 55px;
+}
+
+.page-link {
+  color: #007bff;
+}

@@ -1,0 +1,24 @@
+.row.mb2 {
+  position: relative;
+}
+
+
+.btn {
+  width: 100%;
+  margin: 25px 15px;
+  box-shadow: none;
+  cursor: auto;
+  transition: .3s;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn:active {
+  border: 1px solid #666 !important;
+}
+
+.audio {
+  padding: 0 !important;
+}
